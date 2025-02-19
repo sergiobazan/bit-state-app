@@ -1,4 +1,4 @@
-package com.bidstate.backend.authmanagement.application.users.register;
+package com.bidstate.backend.authmanagement.domain;
 
 import java.util.List;
 import java.util.UUID;

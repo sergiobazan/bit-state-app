@@ -1,10 +1,7 @@
 package com.bidstate.backend.authmanagement.application.users.register;
 
 import com.bidstate.backend.authmanagement.application.users.UserMapper;
-import com.bidstate.backend.authmanagement.domain.Role;
-import com.bidstate.backend.authmanagement.domain.RoleRepository;
-import com.bidstate.backend.authmanagement.domain.User;
-import com.bidstate.backend.authmanagement.domain.UserRepository;
+import com.bidstate.backend.authmanagement.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
