@@ -1,6 +1,6 @@
-package com.bidstate.backend.propertymanagement.properties;
+package com.bidstate.backend.propertymanagement.domain.properties;
 
-import com.bidstate.backend.propertymanagement.sellers.Seller;
+import com.bidstate.backend.propertymanagement.domain.sellers.Seller;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

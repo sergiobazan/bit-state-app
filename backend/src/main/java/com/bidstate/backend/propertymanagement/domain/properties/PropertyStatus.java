@@ -1,4 +1,4 @@
-package com.bidstate.backend.propertymanagement.properties;
+package com.bidstate.backend.propertymanagement.domain.properties;
 
 public enum PropertyStatus {
     AVAILABLE,
