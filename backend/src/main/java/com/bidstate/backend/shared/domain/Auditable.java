@@ -1,4 +1,4 @@
-package shared.domain;
+package com.bidstate.backend.shared.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

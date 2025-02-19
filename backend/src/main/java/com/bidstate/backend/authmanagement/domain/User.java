@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import shared.domain.Auditable;
+import com.bidstate.backend.shared.domain.Auditable;
 
 import java.util.*;
 
