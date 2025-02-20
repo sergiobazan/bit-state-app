@@ -1,6 +1,6 @@
-package com.bidstate.backend.propertymanagement.application.property.create;
+package com.bidstate.backend.propertymanagement.application.properties.create;
 
-import com.bidstate.backend.propertymanagement.application.property.PropertyMapper;
+import com.bidstate.backend.propertymanagement.application.properties.PropertyMapper;
 import com.bidstate.backend.propertymanagement.domain.properties.Address;
 import com.bidstate.backend.propertymanagement.domain.properties.CategoryRepository;
 import com.bidstate.backend.propertymanagement.domain.properties.Property;

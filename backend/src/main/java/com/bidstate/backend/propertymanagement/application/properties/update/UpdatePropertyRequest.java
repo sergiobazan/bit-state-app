@@ -1,22 +1,22 @@
-package com.bidstate.backend.propertymanagement.application.property.create;
+package com.bidstate.backend.propertymanagement.application.properties.update;
 
-import com.bidstate.backend.propertymanagement.application.sellers.getAllSellers.SellerResponse;
 import com.bidstate.backend.propertymanagement.domain.properties.PropertyStatus;
 import com.bidstate.backend.propertymanagement.domain.properties.PropertyType;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public record CreatePropertyResponse(
-        UUID id,
+public record UpdatePropertyRequest(
         String title,
         String description,
         BigDecimal price,
         String measures,
         PropertyType type,
         PropertyStatus status,
-        AddressResponse address,
-        CategoryResponse category,
-        SellerResponse seller
+        String city,
+        String street,
+        String  state,
+        UUID sellerId,
+        UUID categoryId
 ) {
 }

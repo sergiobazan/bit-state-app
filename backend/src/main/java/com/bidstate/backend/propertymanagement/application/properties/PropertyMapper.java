@@ -1,8 +1,8 @@
-package com.bidstate.backend.propertymanagement.application.property;
+package com.bidstate.backend.propertymanagement.application.properties;
 
-import com.bidstate.backend.propertymanagement.application.property.create.AddressResponse;
-import com.bidstate.backend.propertymanagement.application.property.create.CategoryResponse;
-import com.bidstate.backend.propertymanagement.application.property.create.CreatePropertyResponse;
+import com.bidstate.backend.propertymanagement.application.properties.create.AddressResponse;
+import com.bidstate.backend.propertymanagement.application.properties.create.CategoryResponse;
+import com.bidstate.backend.propertymanagement.application.properties.create.CreatePropertyResponse;
 import com.bidstate.backend.propertymanagement.application.sellers.getAllSellers.SellerResponse;
 import com.bidstate.backend.propertymanagement.domain.properties.Property;
 

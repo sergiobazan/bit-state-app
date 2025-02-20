@@ -1,4 +1,4 @@
-package com.bidstate.backend.propertymanagement.application.property.create;
+package com.bidstate.backend.propertymanagement.application.properties.create;
 
 import java.util.UUID;
 

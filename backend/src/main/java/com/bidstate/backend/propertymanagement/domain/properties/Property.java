@@ -45,4 +45,26 @@ public class Property extends Auditable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "seller_id")
     private Seller seller;
+
+    public void update(
+            String title,
+            String description,
+            BigDecimal price,
+            String measures,
+            PropertyType type,
+            PropertyStatus status,
+            Address address,
+            Category category,
+            Seller seller
+    ) {
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.measures = measures;
+        this.status = status;
+        this.type = type;
+        this.address = address;
+        this.category = category;
+        this.seller = seller;
+    }
 }

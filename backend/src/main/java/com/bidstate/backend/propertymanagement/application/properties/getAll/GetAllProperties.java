@@ -1,7 +1,7 @@
-package com.bidstate.backend.propertymanagement.application.property.getAll;
+package com.bidstate.backend.propertymanagement.application.properties.getAll;
 
-import com.bidstate.backend.propertymanagement.application.property.create.CreatePropertyResponse;
-import com.bidstate.backend.propertymanagement.application.property.PropertyMapper;
+import com.bidstate.backend.propertymanagement.application.properties.create.CreatePropertyResponse;
+import com.bidstate.backend.propertymanagement.application.properties.PropertyMapper;
 import com.bidstate.backend.propertymanagement.domain.properties.PropertyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
