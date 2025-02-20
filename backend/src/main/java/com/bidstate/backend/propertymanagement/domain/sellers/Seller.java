@@ -29,4 +29,8 @@ public class Seller extends Auditable {
     @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Property> properties = new ArrayList<>();
 
+    public void update(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }

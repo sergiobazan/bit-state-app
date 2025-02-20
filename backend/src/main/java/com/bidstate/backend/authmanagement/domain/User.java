@@ -45,4 +45,9 @@ public class User extends Auditable implements UserDetails {
     public String getUsername() {
         return email;
     }
+
+    public void update(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }
