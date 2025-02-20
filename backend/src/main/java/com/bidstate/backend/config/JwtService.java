@@ -21,6 +21,8 @@ public class JwtService {
     @Value("${security.jwt.key}")
     private String secretKey;
 
+    private final static long TOKEN_EXPIRATION_TIME = 15 * 60 * 1000;
+
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         claims.put(
@@ -35,7 +37,7 @@ public class JwtService {
                 .add(claims)
                 .subject(userDetails.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + 15 * 60 * 1000))
+                .expiration(new Date(System.currentTimeMillis() + TOKEN_EXPIRATION_TIME))
                 .and()
                 .signWith(getKey())
                 .compact();
