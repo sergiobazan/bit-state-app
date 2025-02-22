@@ -1,6 +1,8 @@
 package com.bidstate.backend.propertymanagement.domain.sellers;
 
+import com.bidstate.backend.auctionmanagement.domain.auctions.Auction;
 import com.bidstate.backend.propertymanagement.domain.properties.Property;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,8 +28,12 @@ public class Seller extends Auditable {
     private String email;
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
     private List<Property> properties = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
+    @JsonBackReference
+    private List<Auction> auctions = new ArrayList<>();
 
     public void update(String name, String email) {
         this.name = name;
