@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-public class UserUpdatedDomainEventHandler {
+public class SellerUpdatedDomainEventHandler {
     private final SellerRepository sellerRepository;
 
     @EventListener

@@ -23,4 +23,8 @@ public class Buyer extends Auditable {
 
     private String email;
 
+    public void update(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }
