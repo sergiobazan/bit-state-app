@@ -48,4 +48,19 @@ public class Auction extends Auditable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
+
+    public void close() throws Exception {
+        if (this.status == AuctionStatus.CLOSED) {
+            throw new Exception("Auction already closed");
+        }
+        if (this.status == AuctionStatus.CANCELLED) {
+            throw new Exception("Auction was cancelled");
+        }
+
+        this.status = AuctionStatus.CLOSED;
+    }
+
+    public void assignWinner(Buyer winner) {
+        this.buyer = winner;
+    }
 }

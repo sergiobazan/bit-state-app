@@ -1,5 +1,7 @@
 package com.bidstate.backend.auctionmanagement.presentation;
 
+import com.bidstate.backend.auctionmanagement.application.auctions.close.CloseAuction;
+import com.bidstate.backend.auctionmanagement.application.auctions.close.CloseAuctionRequest;
 import com.bidstate.backend.auctionmanagement.application.auctions.create.CreateAuction;
 import com.bidstate.backend.auctionmanagement.application.auctions.create.CreateAuctionRequest;
 import com.bidstate.backend.auctionmanagement.application.auctions.create.CreateAuctionResponse;
@@ -23,6 +25,7 @@ public class AuctionController {
     private final GetAuctionById GetAuctionById;
     private final PlaceBid placeBid;
     private final GetBidsForAuction getBidsForAuction;
+    private final CloseAuction closeAuction;
 
     @PostMapping
     ResponseEntity<?> createAuction(@RequestBody CreateAuctionRequest auctionRequest) {
@@ -65,6 +68,16 @@ public class AuctionController {
         try {
             final var result = getBidsForAuction.getBids(id);
             return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("{id}/close")
+    ResponseEntity<?> closeAuction(@PathVariable UUID id, @RequestBody CloseAuctionRequest auctionRequest) {
+        try {
+            closeAuction.closeAuction(id, auctionRequest);
+            return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
