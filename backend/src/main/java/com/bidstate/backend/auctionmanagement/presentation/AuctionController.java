@@ -4,6 +4,7 @@ import com.bidstate.backend.auctionmanagement.application.auctions.create.Create
 import com.bidstate.backend.auctionmanagement.application.auctions.create.CreateAuctionRequest;
 import com.bidstate.backend.auctionmanagement.application.auctions.create.CreateAuctionResponse;
 import com.bidstate.backend.auctionmanagement.application.auctions.getAll.GetAllAuctions;
+import com.bidstate.backend.auctionmanagement.application.auctions.getBids.GetBidsForAuction;
 import com.bidstate.backend.auctionmanagement.application.auctions.getById.GetAuctionById;
 import com.bidstate.backend.auctionmanagement.application.auctions.placeBid.BidRequest;
 import com.bidstate.backend.auctionmanagement.application.auctions.placeBid.PlaceBid;
@@ -21,6 +22,7 @@ public class AuctionController {
     private final GetAllAuctions getAllAuctions;
     private final GetAuctionById GetAuctionById;
     private final PlaceBid placeBid;
+    private final GetBidsForAuction getBidsForAuction;
 
     @PostMapping
     ResponseEntity<?> createAuction(@RequestBody CreateAuctionRequest auctionRequest) {
@@ -52,6 +54,16 @@ public class AuctionController {
     ResponseEntity<?> placeBid(@PathVariable UUID id, @RequestBody BidRequest bidRequest) {
         try {
             final var result = placeBid.place(id, bidRequest);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @GetMapping("{id}/bids")
+    ResponseEntity<?> getAllBidsForAuction(@PathVariable UUID id) {
+        try {
+            final var result = getBidsForAuction.getBids(id);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
